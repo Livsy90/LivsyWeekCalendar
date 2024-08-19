@@ -1,4 +1,4 @@
-# SwiftUI customizable Week Calendar View.
+# SwiftUI customizable Week Calendar View
 
 <img src="https://github.com/Livsy90/LivsyWeekCalendar/blob/main/SimulatorScreenRecording-iPhone15.gif" width="300">
 
