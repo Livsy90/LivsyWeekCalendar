@@ -9,5 +9,4 @@ dependencies: [
     .package(url: "https://github.com/Livsy90/LivsyWeekCalendar.git")
 ]
 ```
-
-![](https://github.com/Livsy90/LivsyWeekCalendar/blob/main/SimulatorScreenRecording-iPhone15.gif)
+<img src="https://github.com/favicon.ico" width="48">
