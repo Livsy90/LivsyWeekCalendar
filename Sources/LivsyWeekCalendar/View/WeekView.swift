@@ -39,9 +39,7 @@ public struct WeekView: View {
         
     public var body: some View {
         HStack {
-            ForEach(0..<7) { i in
-                let date = week.dates[i]
-                
+            ForEach(week.dates, id: \.self) { date in                
                 VStack {
                     Text(date.formatted(.dateTime.weekday()).capitalized)
                         .foregroundColor(defaultTextColor)
