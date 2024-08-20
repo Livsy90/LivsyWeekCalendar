@@ -25,24 +25,16 @@ public struct WeekCalendarView<Content: View>: View {
     private var customWeekView: ((_ week: Week) -> Content)?
     
     public init(
-        accentCircleColor: Color = .blue,
-        accentTextColor: Color = .white,
-        defaultTextColor: Color = .primary,
-        font: Font = .system(size: 20, weight: .semibold),
-        circleHeight: CGFloat = 45,
-        selectedDay: Binding<Date> = .constant(.now)
+        selectedDay: Binding<Date>,
+        @ViewBuilder customContent: @escaping (_ week: Week) -> Content
     ) {
-        self.accentCircleColor = accentCircleColor
-        self.accentTextColor = accentTextColor
-        self.defaultTextColor = defaultTextColor
-        self.font = font
-        self.circleHeight = circleHeight
+        self.accentCircleColor = .blue
+        self.accentTextColor = .white
+        self.defaultTextColor = .primary
+        self.font = .system(.body)
+        self.circleHeight = 32
+        
         _selectedDay = selectedDay
-        customWeekView = nil
-    }
-    
-    public init(@ViewBuilder customContent: @escaping (_ week: Week) -> Content) {
-        self.init()
         self.customWeekView = customContent
     }
     
@@ -93,3 +85,24 @@ public struct WeekCalendarView<Content: View>: View {
     
 }
 
+public extension WeekCalendarView where Content == AnyView {
+    
+    init(
+        selectedDay: Binding<Date>,
+        accentCircleColor: Color = .blue,
+        accentTextColor: Color = .white,
+        defaultTextColor: Color = .primary,
+        font: Font = .system(size: 20, weight: .semibold),
+        circleHeight: CGFloat = 45
+    ) {
+        self.accentCircleColor = accentCircleColor
+        self.accentTextColor = accentTextColor
+        self.defaultTextColor = defaultTextColor
+        self.font = font
+        self.circleHeight = circleHeight
+        
+        _selectedDay = selectedDay
+        customWeekView = nil
+    }
+    
+}
