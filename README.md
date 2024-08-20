@@ -27,3 +27,6 @@ struct ContentView: View {
     }
 }
 ```
+## My series of articles about this view
+
+https://livsycode.com/tag/swiftui-week-calendar-view/
